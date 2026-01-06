@@ -387,4 +387,143 @@
                             <div class="method-info">
                                 <h4>Localisation</h4>
                                 <p>Kinshasa, RDC</p>
-                      
+                                <small>Services à distance ou sur place</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <p>Suivez-moi sur :</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Votre nom complet</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Téléphone (WhatsApp)</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service"><i class="fas fa-briefcase"></i> Type de service</label>
+                            <select id="service" name="service">
+                                <option value="">Choisissez un service</option>
+                                <option value="site-web">Création de site web</option>
+                                <option value="refonte">Refonte de site</option>
+                                <option value="formation">Formation informatique</option>
+                                <option value="maintenance">Maintenance site</option>
+                                <option value="autre">Autre projet</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Décrivez votre projet</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Ex: J'ai besoin d'un site pour mon commerce de tissus à Matonge..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget"><i class="fas fa-dollar-sign"></i> Budget estimé (USD)</label>
+                            <input type="text" id="budget" name="budget" placeholder="Ex: 200-400">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit">
+                            <i class="fas fa-paper-plane"></i> Envoyer ma demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="fas fa-code"></i>
+                        <span>VotreNom</span>
+                    </a>
+                    <p>Solutions digitales innovantes pour la réussite de votre entreprise à Kinshasa</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="#services">Développement Web</a>
+                    <a href="#services">Formations</a>
+                    <a href="#services">Maintenance</a>
+                    <a href="#services">Support Technique</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Liens Rapides</h4>
+                    <a href="#projets">Portfolio</a>
+                    <a href="#tarifs">Tarifs</a>
+                    <a href="#temoignages">Témoignages</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-cta">
+                    <h4>Prêt à démarrer ?</h4>
+                    <p>Contactez-moi dès maintenant pour un devis gratuit</p>
+                    <a href="https://wa.me/243XXXXXXXXX" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Votre Prénom. Tous droits réservés. | Kinshasa, RDC</p>
+                <p class="footer-note">
+                    <i class="fas fa-heart"></i> Construit avec passion pour l'écosystème digital congolais
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <!-- Formspree (remplacez YOUR_FORM_ID) -->
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            // Récupérez votre Formspree ID sur https://formspree.io
+            var form = document.getElementById("contactForm");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                var data = new FormData(form);
+                fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        alert("Message envoyé ! Je vous réponds dans les plus brefs délais.");
+                        form.reset();
+                    } else {
+                        alert("Oups ! Une erreur s'est produite. Contactez-moi directement par WhatsApp.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
